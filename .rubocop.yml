@@ -1,6 +1,14 @@
+AllCops:
+  Exclude:
+    - "spec/spec_helper.rb"
+    - "spec/rails_helper.rb"
+
 Metrics/BlockLength:
   Exclude:
     - "spec/**/*.rb"
 
 Metrics/LineLength:
   Max: 120
+
+Documentation:
+  Enabled: false
