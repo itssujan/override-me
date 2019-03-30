@@ -28,5 +28,16 @@ RSpec.describe Widget do
         expect(subject.donuts_url).to eq('http://google.com')
       end
     end
+
+    context 'when invalid urls are provided' do
+      subject { Widget.new('http://foo', 'fooboo') }
+      it 'should use default cronuts url' do
+        expect(subject.cronuts_url).to eq(CRONUTS_URL)
+      end
+
+      it 'should use default donuts url' do
+        expect(subject.donuts_url).to eq(DONUTS_URL)
+      end
+    end
   end
 end
