@@ -46,7 +46,7 @@ RSpec.describe WelcomeController, type: :request do
   end
 
   private
-  
+
   def widget_text(donut_url: DONUTS_URL, cronuts_url: CRONUTS_URL)
     "By selecting this checkbox, you agree that <a href=\"#{cronuts_url}\" target=\"_blank\">"\
     "cronuts</a> are better than <a href=\"#{donut_url}\" target=\"_blank\">donuts</a>"
