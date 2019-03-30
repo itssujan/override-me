@@ -6,6 +6,6 @@ class WelcomeController < ApplicationController
 
   def index
     @cronut_url = params[:cronuts_url] || CRONUTS_URL
-    @donut_url  = params[:donuts_url] ||DONUTS_URL
+    @donut_url  = params[:donuts_url] || DONUTS_URL
   end
 end
