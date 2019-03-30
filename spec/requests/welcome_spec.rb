@@ -26,9 +26,20 @@ RSpec.describe WelcomeController, type: :request do
         cronuts_url_param = 'https://google.com'
         widget_text = "By selecting this checkbox, you agree that <a href=\"#{cronuts_url_param}\" target=\"_blank\">"\
                       "cronuts</a> are better than <a href=\"#{DONUTS_URL}\" target=\"_blank\">donuts</a>"
-        get '/welcome/index', params: { cronuts_url: 'https://google.com' }
+        get '/welcome/index', params: { cronuts_url: cronuts_url_param }
         expect(response.body).to include(widget_text)
       end
     end
+
+    context 'when index is called with a donut url param' do
+      it 'should change donut url' do
+        donut_url_param = 'https://google.com'
+        widget_text = "By selecting this checkbox, you agree that <a href=\"#{CRONUTS_URL}\" target=\"_blank\">"\
+                      "cronuts</a> are better than <a href=\"#{donut_url_param}\" target=\"_blank\">donuts</a>"
+        get '/welcome/index', params: { donut_url_param: donut_url_param }
+        expect(response.body).to include(widget_text)
+      end
+    end
+
   end
 end
