@@ -36,7 +36,7 @@ RSpec.describe WelcomeController, type: :request do
         donut_url_param = 'https://google.com'
         widget_text = "By selecting this checkbox, you agree that <a href=\"#{CRONUTS_URL}\" target=\"_blank\">"\
                       "cronuts</a> are better than <a href=\"#{donut_url_param}\" target=\"_blank\">donuts</a>"
-        get '/welcome/index', params: { donut_url_param: donut_url_param }
+        get '/welcome/index', params: { donuts_url: donut_url_param }
         expect(response.body).to include(widget_text)
       end
     end
