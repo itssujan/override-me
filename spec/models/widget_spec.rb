@@ -17,5 +17,16 @@ RSpec.describe Widget do
         expect(subject.donuts_url).to eq(DONUTS_URL)
       end
     end
+
+    context 'when urls are provided' do
+      subject { Widget.new('http://google.com', 'http://google1.com') }
+      it 'should contain provided cronuts url' do
+        expect(subject.cronuts_url).to eq('http://google1.com')
+      end
+
+      it 'should contain provided donuts url' do
+        expect(subject.donuts_url).to eq('http://google.com')
+      end
+    end
   end
 end
