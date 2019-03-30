@@ -42,7 +42,7 @@ Finally email us with your link or zip file.
 <h2>Cronut acceptance widget</h2>
 <div class="challenge_box">
   <%= label_tag 'terms_checkbox' do %>
-    By selecting this checkbox, you agree that <a href="<%= @cronut_url%>" target="_blank">cronuts</a> are better than <a href="<%= @donut_url %>" target="_blank">donuts</a>
+    <%= t('welcome.index.super_terms_html', cronuts_link: @cronut_url, donuts_link: @donut_url) %>
   <% end %>
   <%= check_box_tag 'terms_checkbox' %>
 </div>
