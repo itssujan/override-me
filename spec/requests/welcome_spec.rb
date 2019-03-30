@@ -41,5 +41,16 @@ RSpec.describe WelcomeController, type: :request do
       end
     end
 
+    context 'when index is called with both cronut and donut url params' do
+      it 'should change both donut and cronut urls' do
+        donut_url_param = 'https://google.com'
+        cronuts_url_param = 'https://google1.com'
+        widget_text = "By selecting this checkbox, you agree that <a href=\"#{cronuts_url_param}\" target=\"_blank\">"\
+                      "cronuts</a> are better than <a href=\"#{donut_url_param}\" target=\"_blank\">donuts</a>"
+        get '/welcome/index', params: { donuts_url: donut_url_param, cronuts_url: cronuts_url_param }
+        expect(response.body).to include(widget_text)
+      end
+    end
+
   end
 end
